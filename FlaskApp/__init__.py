@@ -30,45 +30,26 @@ def hello():
         connection = sqlite3.connect("/var/www/FlaskApp/FlaskApp/db_test_large.db")        
         c = connection.cursor()
         search_string = request.args.get("name").lower()
-        if search_string == "": return ""
+        if search_string == "":
+            return ""
 
-        query = "select * from plants where name like '{0}%' or latin_name like '{0}%' or type like '{0}%' or swe_name like '{0}%'".format(search_string)
+        query = "SELECT * FROM plants WHERE name LIKE '{0}%' OR latin_name LIKE '{0}%' OR type LIKE '{0}%' OR swe_name LIKE '{0}%'".format(search_string)
 
         for i in c.execute(query):
-            result.append(i)
-       
-        
+            result.append(i)     
  
         final = "["
         for i in result:
             final += to_json(i) + ","
         final = final[:-1] + "]"
-        
-        if final == "]": return ""
+
+        # If query returns nothing
+        if final == "]":
+            return ""
+
         return final
 
     except Exception, e: return str(e)
-
-
-@app.route("/maskros")
-def maskros():
-    return """ {
-    "name": "maskros",
-    "latin_name": "maskus rosus",
-    "kategori": "ogras",
-    "jord": "all",
-    "zon": "forsvarszon"
-}"""
-
-@app.route("/havstulpan")
-def havstulpan():
-    return """ {
-    "name": "havstulpan",
-    "latin_name": "tulpis oceanus",
-    "kategori": "sjogras",
-    "jord": "nej",
-    "zon": "parkeringszon"
-}"""
 
 if __name__ == "__main__":
     app.run()
