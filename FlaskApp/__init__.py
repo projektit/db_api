@@ -21,8 +21,8 @@ def to_json(result_tuple):
     return json
 
 
-@app.route("/")
-def hello():
+@app.route("/api")
+def api():
     
     result = list()
    
