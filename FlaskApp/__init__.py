@@ -27,7 +27,7 @@ def api():
     result = list()
    
     try:
-        connection = sqlite3.connect("/var/www/FlaskApp/FlaskApp/db_test_large.db")        
+        connection = sqlite3.connect("/var/www/FlaskApp/FlaskApp/plants.db")        
         c = connection.cursor()
         search_string = request.args.get("name").lower()
         if search_string == "":
