@@ -8,7 +8,7 @@ app = Flask(__name__)
 def to_json(result_tuple):
     
     try:
-        values = ["id", "name", "latin_name", "type", "soil", "zone_min", "zone_max", "water", "sun", "misc", "swe_name"]
+        values = ["id", "name", "latin_name", "type", "soil", "zone_min", "zone_max", "water", "sun", "misc", "swe_name", "img_url"]
         json = "{"
 
         for i, j in enumerate(result_tuple):
