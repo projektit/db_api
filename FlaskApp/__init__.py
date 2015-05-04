@@ -53,5 +53,29 @@ def api():
 
     except Exception, e: return str(e)
 
+@app.route("/")
+def home:
+    return render_template('index.html',
+                       title='Home')
+
+@app.route("/omoss")
+def home:
+    return render_template('hem.html',
+                       title='Trädgårdsappen')
+@app.route("/appen")
+def home:
+    return render_template('appen.html',
+                       title='Appen')
+
+@app.route("/omprojektet")
+def home:
+    return render_template('omprojektet.html',
+                       title='Om projektet')
+
+@app.route("/hittaoss")
+def home:
+    return render_template('hittaoss.html',
+                       title='Hitta oss')
+
 if __name__ == "__main__":
     app.run()
