@@ -1,6 +1,6 @@
 from flask import Flask
 from flask import request
-
+from flask import render_template
 
 import sqlite3
 app = Flask(__name__)
@@ -54,26 +54,26 @@ def api():
     except Exception, e: return str(e)
 
 @app.route("/")
-def home:
-    return render_template('index.html',
+def home():
+    return render_template('hem.html',
                        title='Home')
 
 @app.route("/omoss")
-def home:
-    return render_template('hem.html',
-                       title='Trädgårdsappen')
+def aboutus():
+    return render_template('omoss.html',
+                       title='Om oss')
 @app.route("/appen")
-def home:
+def appen():
     return render_template('appen.html',
                        title='Appen')
 
 @app.route("/omprojektet")
-def home:
+def aboutproj():
     return render_template('omprojektet.html',
                        title='Om projektet')
 
 @app.route("/hittaoss")
-def home:
+def findus():
     return render_template('hittaoss.html',
                        title='Hitta oss')
 
