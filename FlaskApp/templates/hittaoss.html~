@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Appen</title>
+<title>Hitta oss</title>
 <meta charset="utf-8">
 <meta name="format-detection" content="telephone=no">
 <link rel="icon" href="images/favicon.ico">
 <link rel="shortcut icon" href="images/favicon.ico">
-<link rel="stylesheet" href="css/touchTouch.css">
-<link rel="stylesheet" href="css/stuck.css">
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="static/stuck.css">
+<link rel="stylesheet" href="static/form.css">
+<link rel="stylesheet" href="static/style.css">
 <script src="js/jquery.js"></script>
 <script src="js/jquery-migrate-1.1.1.js"></script>
 <script src="js/script.js"></script>
@@ -17,13 +17,13 @@
 <script src="js/jquery.mobilemenu.js"></script>
 <script src="js/jquery.easing.1.3.js"></script>
 <script src="js/tmStickUp.js"></script>
+<script src="js/modal.js"></script>
+<script src="js/TMForm.js"></script>
 <script src="js/jquery.ui.totop.js"></script>
-<script src="js/touchTouch.jquery.js"></script>
 <script>
  $(document).ready(function(){
   $().UItoTop({ easingType: 'easeOutQuart' });
   $('#stuck_container').tmStickUp({});
-  $('.gallery .gall_item').touchTouch();
 });
 </script>
 <!--[if lt IE 9]>
@@ -33,7 +33,7 @@
    </a>
 </div>
 <script src="js/html5shiv.js"></script>
-<link rel="stylesheet" media="screen" href="css/ie.css">
+<link rel="stylesheet" media="screen" href="static/ie.css">
 <![endif]-->
 </head>
 <body id="top">
@@ -44,17 +44,12 @@
 <!--==============================
             Stuck menu
 =================================-->
-   <section id="stuck_container">
+  <section id="stuck_container">
     <div class="container">
       <div class="row">
         <div class="grid_12">
         <h1><span style="font-family: Consolas, 'Andale Mono', 'Lucida Console', 'Lucida Sans Typewriter', Monaco, 'Courier New', monospace; font-weight: normal; font-size: xx-large;"><br>MIN TRÄDGÅRD </span>
-  <p><span style="font-style: italic; font-size: x-large; text-align: left;">trädgårdsappen</span></p><!--<section id="stuck_container">
-    <div class="container">
-      <div class="row">
-        <div class="grid_12">
-        <h1><span style="font-family: Consolas, 'Andale Mono', 'Lucida Console', 'Lucida Sans Typewriter', Monaco, 'Courier New', monospace; font-weight: normal; font-size: xx-large;">TRÄDGÅRDSAPPEN </span>
-  <p><span style="font-style: italic; font-size: x-large; text-align: left;">allt om trädgård</span></p>
+  <p><span style="font-style: italic; font-size: x-large; text-align: left;">trädgårdsappen</span></p>
   <!--<a href="index.html">
            Trädgsårdsappen <!--<img src="images/logo.png" alt="Logo alt">
           </a>-->
@@ -64,9 +59,9 @@
               <ul class="sf-menu">
                <li><a href="index.html">Hem</a></li>
                <li><a href="index-1.html">Om oss</a></li>
-               <li class="current"><a href="index-2.html">Appen</a></li>
+               <li><a href="index-2.html">Appen</a></li>
                <li><a href="index-3.html">Om projektet</a></li>
-               <li><a href="index-4.html">Hitta oss</a></li>
+               <li class="current"><a href="index-4.html">Hitta oss</a></li>
              </ul>
             </nav>
             <div class="clear"></div>
@@ -80,58 +75,81 @@
           Content
 ======================-->
 <section class="content"><div class="ic">More Website Templates @ TemplateMonster.com - June 16, 2014!</div>
-  <div class="container">
-    <div class="row">
+  <!--<div class="container">
+   <div class="row">
       <div class="grid_12">
-        <h3 class="ta__center">Appen</h3>
+        <h3 class="ta__center">Hitta oss</h3>-->
+        <!--<div class="map">
+          <figure class="">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d24214.807650104907!2d-73.94846048422478!3d40.65521573400813!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1395650655094" style="border:0"></iframe>
+          </figure>
+        </div>-->
       </div>
-      <div class="gallery">
-        <div class="grid_4">
-          <a href="images/big1.jpg" class="gall_item"><img src="images/alltomtradgardintro.png" alt=""></a>
-          <div class="text1"><a href="#"><!--Lueiverra Mertolo Derto--></a></div>
-          <!--Asit ametconsecteturertolom  werto monikosit amet ultricies erateroli me rutruma auctorerttu terolp sadertto-->
+      <!--<div class="grid_6">
+        <div class="text1 tx__1">Contact Form</div>
+          <form id="form" >
+            <div class="form_spinner">
+              <img src="images/Preloader_4.gif" alt="">
+            </div>
+            <div class="modal fade response-message">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Modal title</h4>
+                  </div>
+                  <div class="modal-body">
+                    asfasfasf
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="response-error-message"></div>
+                <label class="name">
+                  <input type="text" name="name" placeholder="Name:" value="" data-constraints="@Required @JustLetters" />
+                  <span class="empty-message">*This field is required.</span>
+                  <span class="error-message">*This is not a valid name.</span>
+                </label>
+                <label class="email">
+                  <input type="text" name="email" placeholder="E-mail:" value="" data-constraints="@Required @Email" />
+                  <span class="empty-message">*This field is required.</span>
+                  <span class="error-message">*This is not a valid email.</span>
+                </label>
+                <label class="phone">
+                  <input type="text" name="phone" placeholder="Phone:" value="" data-constraints="@Required @JustNumbers"/>
+                  <span class="empty-message">*This field is required.</span>
+                  <span class="error-message">*This is not a valid phone.</span>
+                </label>
+                <label class="message">
+                  <textarea name="message" placeholder="Message:" data-constraints='@Required @Length(min=20,max=999999)'></textarea>
+                  <span class="empty-message">*This field is required.</span>
+                  <span class="error-message">*The message is too short.</span>
+                </label>
+                <div class="clear"></div>
+                <div class="btns">
+                  <a href="#" data-type="reset" class="btn">clear</a>
+                  <a href="#" data-type="submit" class="btn">send</a>
+                </div>
+          </form>
+      </div>-->
+      <br><br><br>
+       <section id="stuck_container">
+      <div class="container">
+   <div class="row">
+      <div class="grid_12">
+      <!--<div class="grid_6">-->
+        <div class="text1 tx__1">Hitta oss
         </div>
-        <div class="grid_4">
-          <a href="images/big2.jpg" class="gall_item"><img src="images/premnr.png" alt=""></a>
-          <!--<div class="text1"><a href="#">Keiverra Mertolo Terto</a></div>
-          Detconsecteturertolom  werto monikosit amet ultricies erateroli me rutruma auctorerttu terolp sadertt
-        </div>
-        <div class="grid_4">
-          <a href="images/big3.jpg" class="gall_item"><img src="images/page3_img3.jpg" alt=""></a>
-          <div class="text1"><a href="#">Saeerra Gertolo Lertor</a></div>
-          Nametconsecteturertolom  werto monikosit amet ultricies erateroli me rutruma auctorerttu terolp saderttor
-        </div>
-        <div class="clear sep__4"></div>
-        <div class="grid_4">
-          <a href="images/big4.jpg" class="gall_item"><img src="images/page3_img4.jpg" alt=""></a>
-          <div class="text1"><a href="#">Jeiverra Lertolo Derto</a></div>
-          Msit ametconsecteturertolom  werto monikosit amet ultricies erateroli me rutruma auctorerttu terolp sad
-        </div>
-        <div class="grid_4">
-          <a href="images/big5.jpg" class="gall_item"><img src="images/page3_img5.jpg" alt=""></a>
-          <div class="text1"><a href="#">Nueiverra Bertolo Herto</a></div>
-          Nosit ametconsecteturertolom  werto monikosit amet ultricies erateroli me rutruma auctorerttu terolp
-        </div>
-        <div class="grid_4">
-          <a href="images/big6.jpg" class="gall_item"><img src="images/page3_img6.jpg" alt=""></a>
-          <div class="text1"><a href="#">Julieiverra Vertolo Merto</a></div>
-          Vsit ametconsecteturertolom  werto monikosit ameterto ultricies erateroli me rutruma auctorerttu terolp satto
-        </div>
-        <div class="clear sep__4"></div>
-        <div class="grid_4">
-          <a href="images/big7.jpg" class="gall_item"><img src="images/page3_img7.jpg" alt=""></a>
-          <div class="text1"><a href="#">Lueiverra Gertolo Merto</a></div>
-          Asit ametconsecteturertolom  werto monikosit amet ultricies erateroli me rutruma auctorerttu terolp sadertto
-        </div>
-        <div class="grid_4">
-          <a href="images/big8.jpg" class="gall_item"><img src="images/page3_img8.jpg" alt=""></a>
-          <div class="text1"><a href="#">Mueiverra Fertolo Serto</a></div>
-          Neit ametconsecteturertolom  werto monikosit ameterto ultricies erateroli me rutruma auctorerttu terolp serttno
-        </div>
+        The Royal Institute of Technology<br>
+        Electrum, Kistagången 16. <br>
+        Stockholm, Kista 16447. <br>
+        Telephone:  <br>
+        E-mail: <a href="#"></a>
       </div>
     </div>
-  </div>-->
+  </div>
 </section>
+  <br><br><br>
 <!--==============================
               footer
 =================================-->
@@ -160,7 +178,7 @@
           <div>Website designed by <a href="http://www.templatemonster.com/" rel="nofollow">TemplateMonster.com</a></div>
         </div>
       </div>
-       </div>
+    </div>
   </div>
 </footer>
 </body>

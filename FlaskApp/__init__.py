@@ -55,27 +55,22 @@ def api():
 
 @app.route("/")
 def home():
-    return render_template('hem.html',
-                       title='Home')
+    return render_template('hem.html')
 
 @app.route("/omoss")
 def aboutus():
-    return render_template('omoss.html',
-                       title='Om oss')
+    return render_template('omoss.html')
 @app.route("/appen")
 def appen():
-    return render_template('appen.html',
-                       title='Appen')
+    return render_template('appen.html')
 
 @app.route("/omprojektet")
 def aboutproj():
-    return render_template('omprojektet.html',
-                       title='Om projektet')
+    return render_template('omprojektet.html')
 
 @app.route("/hittaoss")
 def findus():
-    return render_template('hittaoss.html',
-                       title='Hitta oss')
+    return render_template('hittaoss.html')
 
 if __name__ == "__main__":
     app.run()
