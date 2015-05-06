@@ -85,7 +85,8 @@ audio,
 video {
 	border: 0;
 	font-size: 100%;
-	font: inherit;
+	/*det är här man ändrar på typsnittet!!!!*/
+	font-family: Cambria, Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
 	vertical-align: top;
 	margin-bottom: 0px;
 	margin-left: 0;
