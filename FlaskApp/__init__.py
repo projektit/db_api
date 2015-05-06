@@ -12,8 +12,9 @@ def to_json(result_tuple):
         json = "{"
 
         for i, j in enumerate(result_tuple):
-            if type(j) is str:
-                j.replace('"', '\\"')
+            if i == 9:
+                j[0].replace('"', '\\\"')
+                j[0].replace(":", "\\\:")
             json += '"{0}" : "{1}",'.decode('utf-8').format(values[i], j)
 
         json = json[:-1]
