@@ -36,7 +36,16 @@ def api():
         if search_string == "":
             return ""
 
-        query = "SELECT * FROM plants WHERE name LIKE '{0}%' OR latin_name LIKE '{0}%' OR type LIKE '{0}%' OR swe_name LIKE '{0}%'".format(search_string)
+        query = """SELECT * 
+FROM plants WHERE 
+name LIKE '{0}%' OR
+name LIKE '% {0}%' OR
+latin_name LIKE '{0}%' OR
+latin_name LIKE '% {0}%' OR
+type LIKE '{0}%' OR
+type LIKE '% {0}%' OR
+swe_name LIKE '{0}%' OR
+swe_name LIKE '% {0}%'""".format(search_string)
 
         for i in c.execute(query):
             result.append(i)     
