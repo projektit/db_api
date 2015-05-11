@@ -42,8 +42,6 @@ name LIKE '{0}%' OR
 name LIKE '% {0}%' OR
 latin_name LIKE '{0}%' OR
 latin_name LIKE '% {0}%' OR
-type LIKE '{0}%' OR
-type LIKE '% {0}%' OR
 swe_name LIKE '{0}%' OR
 swe_name LIKE '% {0}%'""".format(search_string)
 
