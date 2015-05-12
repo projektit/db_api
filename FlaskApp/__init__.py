@@ -1,3 +1,8 @@
+# -*- coding: utf-8 -*-
+import sys
+reload(sys)
+sys.setdefaultencoding("utf-8")
+
 from flask import Flask
 from flask import request
 from flask import render_template
@@ -15,7 +20,7 @@ def to_json(result_tuple):
             if i == 9:
                 j[0].replace('"', '\\\"')
                 j[0].replace(":", "\\\:")
-            json += '"{0}" : "{1}",'.decode('utf-8').format(values[i], j)
+            json += '"{0}" : "{1}",'.format(values[i], j)
 
         json = json[:-1]
         json += "}"
@@ -33,6 +38,12 @@ def api():
         connection = sqlite3.connect("/var/www/FlaskApp/FlaskApp/plants.db")        
         c = connection.cursor()
         search_string = request.args.get("name").lower()
+        
+        #decode
+        search_string = search_string.replace("[oh]", "Å")
+        search_string = search_string.replace("[aeh]", "Ä")
+        search_string = search_string.replace("[ueh]", "Ö")
+        
         if search_string == "":
             return ""
 
@@ -44,10 +55,10 @@ latin_name LIKE '{0}%' OR
 latin_name LIKE '% {0}%' OR
 swe_name LIKE '{0}%' OR
 swe_name LIKE '% {0}%'""".format(search_string)
-
+        
         for i in c.execute(query):
             result.append(i)     
- 
+
         final = "["
         for i in result:
             final += to_json(i) + ","
