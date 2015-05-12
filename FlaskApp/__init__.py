@@ -43,6 +43,9 @@ def api():
         search_string = search_string.replace("[oh]", "Å")
         search_string = search_string.replace("[aeh]", "Ä")
         search_string = search_string.replace("[ueh]", "Ö")
+        search_string = search_string.replace("[ohh]", "å")
+        search_string = search_string.replace("[aehh]", "ä")
+        search_string = search_string.replace("[uehh]", "ö")
         
         if search_string == "":
             return ""
