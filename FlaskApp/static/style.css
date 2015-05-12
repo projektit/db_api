@@ -1070,3 +1070,7 @@ header h1 a img {
         font-size: 18px !important;
     }    
 }
+
+#second_row {
+margin: auto;
+}

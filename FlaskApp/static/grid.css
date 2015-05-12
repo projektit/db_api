@@ -208,6 +208,9 @@ table {
 .grid_1 {
   width: 70px;
 }
+#second_row {
+  width: 910px;
+}
 .preffix_12 {
   margin-left: 1230px;
 }
@@ -316,6 +319,9 @@ table {
   .grid_1 {
     width: 60px;
   }
+  #second_row {
+    width: 720px;
+  }
   .preffix_12 {
     margin-left: 980px;
   }
@@ -410,6 +416,9 @@ table {
   }
   .grid_1 {
     width: 44px;
+  }
+  #second_row {
+    width: 600px;
   }
   .preffix_12 {
     margin-left: 788px;
